@@ -125,7 +125,7 @@ $(document).ready(function(){
 function initDialogs() {
   dialog = $("#dialog-form").dialog({
     autoOpen : false,
-    height : 600,
+    height : 750,
     width : 700,
     modal : true,
     buttons : {
@@ -711,8 +711,23 @@ function parseResponse(barcode, json) {
     }
 
     //if (!LOC_REGEX.test(loc)) {
-    let locSelected = $('#locSelected option:selected').val();
-    if (locSelected != loc) {
+    //let locSelected = $('#locSelected option:selected').val();
+    let locSelected = $('#locSelected').val();
+    let locMatched = false;
+    if(locSelected) {
+      console.log("Selected values are: " + locSelected) 
+      for (let i = 0; i < locSelected.length; i++) {
+        thisLoc = locSelected[i];
+        //console.log("comparing " + thisLoc + " with value of " + loc);
+        if (thisLoc == loc) {
+          //console.log("MATCHED " + thisLoc + " with value of " + loc);
+          locMatched = true;
+          break;
+        }
+      }
+    }
+    //if (locSelected != loc) {
+    if (! locMatched) {
       status = (status == "PASS") ? "PULL-LOC" : "PULL-MULT";
       status_msg += LOC_MSG;
     }

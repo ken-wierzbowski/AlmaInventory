@@ -1,1 +1,1 @@
-docker push cedelis/alma-inventory-node:0.2
+docker push cedelis/alma-inventory-node:0.9
