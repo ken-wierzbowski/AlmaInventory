@@ -102,7 +102,14 @@ deweyCallClass.prototype.localeCompare = function (a, b) {
     var a_norm = this.returnNormLcCall(a),
       b_norm = this.returnNormLcCall(b);
             
+      return  a.localeCompare(b, undefined, { 
+        numeric: true, 
+        sensitivity: 'base' 
+      });
+
+/****
       return ( a_norm < b_norm ? -1 : (a_norm > b_norm ? 1 : 0) );
+****/
   }
   catch (err) {
     // console.log("error")

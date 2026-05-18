@@ -912,6 +912,20 @@ function setLcSortStat(tr) {
   tdcall.attr("title", normlc);
 
   var prev = tr.next("tr").find("td.call_number").attr("title");
+
+
+  if (prev == null || prev == "") {
+    tdcall.addClass("lcfirst");
+  } else if (lcsorter.localeCompare(normlc,prev) == 0) {
+    tdcall.addClass("lcequal");
+  } else if (lcsorter.localeCompare(normlc,prev) == 1) {
+    tdcall.addClass("lcnext");
+  } else {
+    tdcall.addClass("lcprev");
+    soundBeep();
+  }
+/*****
+// this doesn't sort correctly!
   if (prev == null || prev == "") {
     tdcall.addClass("lcfirst");
   } else if (normlc == prev) {
@@ -922,6 +936,9 @@ function setLcSortStat(tr) {
     tdcall.addClass("lcprev");
     soundBeep();
   }
+*****/
+
+
 }
 
 
