@@ -19,17 +19,17 @@ Author: Terry Brady, Georgetown University Libraries
 <link rel="stylesheet" type="text/css" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.css"></link>
 -->
 <meta name="robots" content="noindex">
-<script	src="beep.js"></script>
-<script	src="jquery-1.7.2.min.js"></script>
-<script src="jquery-ui-1.9.1.min.js"></script>
-<script src="jquery.csv-0.71.min.js"></script>
-<link rel="stylesheet" type="text/css" href="jquery-ui-1.10.3.css"></link>
+<script	src="/beep.js"></script>
+<script	src="/jquery-1.7.2.min.js"></script>
+<script src="/jquery-ui-1.9.1.min.js"></script>
+<script src="/jquery.csv-0.71.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/jquery-ui-1.10.3.css"></link>
 
-<link rel="stylesheet" type="text/css" href="barcode.css"/>
+<link rel="stylesheet" type="text/css" href="/barcode.css"/>
 <!--http://www.w3schools.com/w3css/w3css_icons.asp-->
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<script type="text/javascript" src="gsheet.js"></script>
-<script type="text/javascript" src="barcode.init.js"></script>
+<script type="text/javascript" src="/gsheet.js"></script>
+<script type="text/javascript" src="./barcode.init.js"></script>
 <script type="text/javascript">
   $(document).ready(function(){
       var orgMatch = window.location.pathname.match(/^\/org\/([^\/]+)/);
@@ -50,7 +50,7 @@ Author: Terry Brady, Georgetown University Libraries
 </head>
 <body>
 <h2>Alma Interactive Inventory Scanning Tool</h2>
-<h4>CARLI provides this tool for I-Share Libraries. Please see <a href="https://www.carli.illinois.edu/products-services/i-share/external-system/GeorgetownInventory">CARLI’s documentation page</a> on this tool, and contact <a href="mailto:support@carli.illinois.edu">CARLI Support</a> with any questions.</h4>
+<h4>Configured for URochester Libraries. Based on <a href="https://github.com/CARLI/AlmaInventory">code modified by CARLI</a> of the original AlmaInventory app written by <a href="https://github.com/terrywbradyC9/AlmaInventory">Terry Brady</a>. Please see <a href="https://www.carli.illinois.edu/products-services/i-share/external-system/GeorgetownInventory">CARLI’s documentation page</a> on this tool, or <a href="https://service.rochester.edu/servicedesk/customer/portal/161/create/2305">open a ticket with the River Campus Libraries Service desk</a> for support issues.</h4>
 <input id="test" type="hidden"/>
 <input id="mode" type="hidden"/>
 <input id="user" type="hidden"/>
