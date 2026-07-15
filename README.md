@@ -1,22 +1,22 @@
 # AlmaInventory
 
--Alma Inventory API application that can be launched using PHP Desktop on Windows.
+- Alma Inventory API application that can be launched using PHP Desktop on Windows.
 For background on the application, see [CARLI's adaptation](https://github.com/CARLI/AlmaInventory) of the [original AlmaInventory app written by Terry Brady](https://github.com/terrywbradyC9/AlmaInventory).
 
--Intent is to deploy this app on a small scale for use on stacks staff laptops and is not intended to be deployed at scale in its current state.
+- Intent is to deploy this app on a small scale for use on stacks staff laptops and is not intended to be deployed at scale in its current state.
 
 ## Prerequisites
 
-    PHP Desktop Chrome 130.1 for Windows
-    Git
-    An Ex Libris Alma API key with read-only access to the Bibs and Configuration APIs
+  - PHP Desktop Chrome 130.1 for Windows
+  - Git
+  - An Ex Libris Alma API key with read-only access to the Bibs and Configuration APIs
 
 ## Configuration
 
--Add project files to `www` PHP Desktop folder.
--Download the [cacert.pem](https://curl.se/ca/cacert.pem) file and place in `www/php` directory from CA certificates extracted from Mozilla
--In PHP Desktop, modify settings.json file to adjust app window size.
--Configure your Alma API key in `local.prop`.
+- Add project files to `www` PHP Desktop folder.
+- Download the [cacert.pem](https://curl.se/ca/cacert.pem) file and place in `www/php` directory from CA certificates extracted from Mozilla
+- In PHP Desktop, modify settings.json file to adjust app window size.
+- Configure your Alma API key in `local.prop`.
 
 
 ## Functionality
