@@ -14,7 +14,7 @@ For background on the application, see [CARLI's adaptation](https://github.com/C
 ## Configuration
 
 - Add project files to `www` PHP Desktop folder.
-- Download a [CA certificate in PEM format from Mozzila](https://curl.se/ca/cacert.pem) and place in `www/php` directory from CA certificates extracted from Mozilla
+- Download a [CA certificate in PEM format from Mozilla](https://curl.se/ca/cacert.pem) and place in `www/php` directory.
 - In PHP Desktop, modify settings.json file to adjust app window size.
 - Configure your Alma API key in `local.prop`.
 
