@@ -51,7 +51,7 @@ var sr=1;
 var STAT_FAIL = "FAIL";
 var COLORMAP = [
   {status: "PASS",       color: "white",        nickname: "white",           desc: "Information is valid.  No action required."},
-  {status: STAT_FAIL,    color: "pink",         nickname: "pink",            desc: "Retrieval failed.  Try to refresh again. <a href=\"https://service.rochester.edu/servicedesk/customer/portal/161/create/2305\">Open a ticket with the River Campus Libraries Service desk</a> if the problem persists."},
+  {status: STAT_FAIL,    color: "pink",         nickname: "pink",            desc: "Retrieval failed.  Try to refresh again. <a href=\"https://service.rochester.edu/servicedesk/customer/portal/161/create/2305\" target=\"_blank\">Open a ticket with the River Campus Libraries Service desk</a> if the problem persists."},
   {status: "NOT-FOUND",  color: "coral",        nickname: "red",             desc: "No Alma data for barcode."},
   {status: "META-CALL",  color: "darkorange",   nickname: "electric orange",  desc: "Bad Call Number."},
   {status: "META-TTL",   color: "lightskyblue", nickname: "blue",            desc: "Bad Title."},
