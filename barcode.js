@@ -6,7 +6,6 @@ Author: Terry Brady, Georgetown University Libraries
 Dependencies
   1. JQuery UI Dialog:https://jqueryui.com/dialog/
   2. A web service that returns data from the Alma API based on a Barcode: https://github.com/Georgetown-University-Libraries/BarcodeInventory
-  3. A Google Apps Web Service that converts CSV data into a Google Sheet: https://github.com/Georgetown-University-Libraries/PlainTextCSV_GoogleAppsScript
 
 Credits
   This code uses a LC Call Number Sort module developed by Ray Voelker from the University of Dayton Library
@@ -52,7 +51,7 @@ var sr=1;
 var STAT_FAIL = "FAIL";
 var COLORMAP = [
   {status: "PASS",       color: "white",        nickname: "white",           desc: "Information is valid.  No action required."},
-  {status: STAT_FAIL,    color: "pink",         nickname: "pink",            desc: "Retrieval failed.  Try to refresh again.  File a ticket with <a href=\"mailto:support@carli.illinois.edu\">CARLI Support</a> if the issue persists."},
+  {status: STAT_FAIL,    color: "pink",         nickname: "pink",            desc: "Retrieval failed.  Try to refresh again. <a href=\"https://service.rochester.edu/servicedesk/customer/portal/161/create/2305\">Open a ticket with the River Campus Libraries Service desk</a> if the problem persists."},
   {status: "NOT-FOUND",  color: "coral",        nickname: "red",             desc: "No Alma data for barcode."},
   {status: "META-CALL",  color: "darkorange",   nickname: "electric orange",  desc: "Bad Call Number."},
   {status: "META-TTL",   color: "lightskyblue", nickname: "blue",            desc: "Bad Title."},
@@ -185,22 +184,21 @@ function initDialogs() {
 }
 
 
-function downloadToFile (content, filename, contentType) {
-  var popup = window.open(); 
-
+function downloadToFile(content, filename, contentType) {
+  // Create download link in current document, no popup needed
   const a = document.createElement('a');
   const file = new Blob([content], {type: contentType});
   
-  a.href= URL.createObjectURL(file);
+  a.href = URL.createObjectURL(file);
   a.download = filename;
-
-  popup.document.body.appendChild(a); 
-
+  
+  // Append to current document
+  document.body.appendChild(a);
   a.click();
-
+  document.body.removeChild(a);
+  
   URL.revokeObjectURL(a.href);
 }
-
 
 /*
  * Bind Action Events to page
@@ -296,6 +294,7 @@ function bindEvents() {
   });
 
   //Activate export to Google Sheets function
+  /*
   $("#exportGsheet").on("click", function(){
     var cnt = $("tr.datarow").length;
     if (cnt == 0) {
@@ -318,7 +317,7 @@ function bindEvents() {
       data: buf
     })
     */
-
+/*
     gsheet.gsheet(nodes, ssname, folderid);
     var msg = $("<div>Please confirm that <b>"+cnt+"</b> barcodes were successfully exported and saved to Google sheets.Click <b>OK</b> delete those barcodes from this page.</div>");
     mydialog("Clear Barcode Table?", msg, function() {
@@ -326,7 +325,7 @@ function bindEvents() {
       autosave();
       barcodeDialog();
     });
-  });
+  }); */
 
   //Activate buttons that change the status of the last item scanned
   $("button.lastbutt").on("click", function() {

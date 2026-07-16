@@ -29,7 +29,8 @@ This code will facilitate an inventory of items cataloged in the Alma integrated
   - To avoid cross-origin restrictions, a PHP service is used to call the Alma API and to add the Alma API key
   - This service simply appends the api key to the request and returns the json object provided from the Alma API
 - Results are displayed in a table with common errors highlighted
-- Optionally, the user can upload results of a scanning session to Google sheets
+- Users can then download a CSV of the barcodes for further processing.
+  - Google Sheets option available in the original app has been removed.
 
 
 ## Configuration Files
@@ -37,13 +38,7 @@ This code will facilitate an inventory of items cataloged in the Alma integrated
 | Purpose | Server Type | Default File Location | Note |
 | ------- | ----------- | --------------------- | ---- |
 | Store Alma API Key | All | /var/data/local.prop |This file should not be web accessible|
-| Set path to local.prop | Jetty | jetty/prop.jsp | JSP code file|
-| | Node.js| node/prop.js | Node.js code file |
 | | PHP | php/Alma.prop | PHP prop file format |
 | Set client side properties | All | */barcode.init.js | Alma API URL is set for all instances |
 | | All | */barcode.init.js | Location validation regular expression, barcode validation regular expression |
-| | Jetty | jetty/barcode.init.js | Alma requests are pre-processed by inventory/redirect.jsp|
-| | Node.js | node/barcode.init.js | Alma requests are pre-processed by redirect.js |
 | | PHP | php/barcode.init.js | Alma requests are pre-processed by barcodeReportRedirect.php |
-| Set Google Drive Upload Properties | All | gsheet.prop.json | Save gsheet.prop.json.template to gsheet.prop.json note that these values will be visible to the client app.|
-
