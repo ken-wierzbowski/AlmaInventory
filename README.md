@@ -35,10 +35,9 @@ This code will facilitate an inventory of items cataloged in the Alma integrated
 
 ## Configuration Files
 
-| Purpose | Server Type | Default File Location | Note |
-| ------- | ----------- | --------------------- | ---- |
-| Store Alma API Key | All | /var/data/local.prop |This file should not be web accessible|
-| | PHP | php/Alma.prop | PHP prop file format |
-| Set client side properties | All | */barcode.init.js | Alma API URL is set for all instances |
-| | All | */barcode.init.js | Location validation regular expression, barcode validation regular expression |
-| | PHP | php/barcode.init.js | Alma requests are pre-processed by barcodeReportRedirect.php |
+| Purpose | Default File Location | Note |
+| ------- | --------------------- | ---- |
+| Store Alma API Key | /var/data/local.prop |This file should not be web accessible|
+| | php/Alma.prop | PHP prop file format |
+| Set client side properties | */barcode.init.js | Alma API URL is set for all instances, Location validation regular expression, barcode validation regular expression |
+| | php/barcode.init.js | Alma requests are pre-processed by barcodeReportRedirect.php |
